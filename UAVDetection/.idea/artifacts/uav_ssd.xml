@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="uav_ssd">
+    <output-path>$PROJECT_DIR$/target/classes</output-path>
+    <root id="archive" name="uav_ssd.jar">
+      <element id="module-output" name="UAVDetection" />
+    </root>
+  </artifact>
+</component>
