@@ -5,6 +5,6 @@ package com.bean;
  */
 public class UAVConfig {
     public String logDir = "/home/hadoop/zm/UAVDetection/logs/";
-    public String libPath = "/";
+    public String libPath = "/home/hadoop/zm/ssd/jni/UAV-jni/src/java/build/libuavdetect.so";
 
 }

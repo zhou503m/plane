@@ -76,7 +76,6 @@ public abstract class CVParticle implements Comparable<CVParticle> {
      * Compares one generictype to another based on their sequence number.
      * @return -1 if this.sequenceNr < other.sequenceNr, 0 if this.sequenceNr == other.sequenceNr else 1
      */
-    @Override
     public int compareTo(CVParticle other){
         return (int)(getSequenceNr() - other.getSequenceNr());
     }
