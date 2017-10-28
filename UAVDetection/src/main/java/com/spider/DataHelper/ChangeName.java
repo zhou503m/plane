@@ -12,7 +12,7 @@ public class ChangeName {
      */
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        getFileName();
+        getFileName("/Users/zhoumeng/Desktop/UAV-Images-test/","/Users/zhoumeng/Desktop/UAV-Images-raw/");
     }
 
     /*
@@ -44,9 +44,11 @@ public class ChangeName {
     /*
      * 文件夹下文件所有文件展示
      */
-    public static void getFileName() {
-        String path = "/Users/zhoumeng/Desktop/UAV-Images-test/"; // 路径
-        String path1 = "/Users/zhoumeng/Desktop/UAV-Images-raw/";
+    public static void getFileName(String originpath, String targetPath) {
+        String path = originpath;
+        String path1 = targetPath;
+        //String path = "/Users/zhoumeng/Desktop/UAV-Images-test/"; // 路径
+        //String path1 = "/Users/zhoumeng/Desktop/UAV-Images-raw/";
         File f = new File(path);
         if (!f.exists()) {
             System.out.println(path + " 不存在");
