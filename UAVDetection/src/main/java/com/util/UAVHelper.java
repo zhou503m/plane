@@ -1,5 +1,8 @@
 package com.util;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,5 +39,42 @@ public class UAVHelper {
         return result;
     }
 
+    public static void genTxt(String path, String target) throws Exception{
+
+        FileWriter fw = new FileWriter(new File(target));
+        BufferedWriter bw =new BufferedWriter(fw);
+        File file = new File(path);
+        if (file.exists()) {
+            File[] files = file.listFiles();
+            if (files.length == 0) {
+                System.out.println("文件夹是空的!");
+                return;
+            } else {
+                for (File file2 : files) {
+                    if (file2.isDirectory()) {
+                        //System.out.println("文件夹:" + file2.getAbsolutePath());
+                        //genTxt(file2.getAbsolutePath());
+                    } else {
+                        //System.out.println("文件:" + file2.getAbsolutePath());
+                        bw.write(file2.getAbsolutePath() + "\n");
+                    }
+                }
+            }
+        } else {
+            System.out.println("文件不存在!");
+        }
+        bw.close();
+        fw.close();
+    }
+
+    public static void main(String[] args) throws Exception{
+        if (args.length < 2) {
+            System.out.println("-----use : args[0]:image folder   args[1]:target file path ");
+            return;
+        }
+        String path = args[0];
+        String target  = args[1];
+        genTxt(path, target);
+    }
 
 }
